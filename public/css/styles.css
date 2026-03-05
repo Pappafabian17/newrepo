@@ -4,3 +4,123 @@
 *:after {
   box-sizing: border-box;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+/* ------------------------HEADER---------------- */
+#top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0.5rem;
+}
+
+.siteName,
+#tools {
+  a {
+    text-decoration: none;
+    color: #212a5a;
+  }
+}
+.siteName {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#tools {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* ------------------------HEADER END---------------- */
+
+/* ------------------------NAVIGATION---------------- */
+.nav {
+  background-color: #212a5a;
+}
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.nav-list li {
+  text-decoration: none;
+  list-style: none;
+  padding: 0.8rem 0;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+}
+/* ------------------------NAVIGATION END---------------- */
+
+/*BODY*/
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc;
+  background-image: url("../images/vehicles/delorean.jpg");
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  padding-left: 5px;
+
+  position: relative;
+}
+
+.content-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 290px;
+  z-index: 10;
+  left: 10px;
+  color: #39bde5;
+}
+.car-model {
+  font-size: large;
+  font-weight: 900;
+}
+.description-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.6rem 0 0;
+  li {
+    list-style: none;
+    font-weight: 500;
+  }
+}
+/*BODY END */
+
+/*------------------------ MEDIA FOR LARGE SCREEN ------------------------*/
+@media screen and (min-width: 768px) {
+  body {
+    background-color: red;
+  }
+}
+/*------------------------ MEDIA FOR LARGE SCREEN ------------------------*/
