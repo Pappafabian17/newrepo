@@ -12,7 +12,6 @@ body {
 }
 body {
   font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
@@ -37,12 +36,10 @@ h6 {
   margin: 0 0.5rem;
 }
 
-.siteName,
-#tools {
-  a {
-    text-decoration: none;
-    color: #212a5a;
-  }
+.siteName a,
+#tools a {
+  text-decoration: none;
+  color: #212a5a;
 }
 .siteName {
   font-size: 2rem;
@@ -124,11 +121,11 @@ h6 {
   flex-direction: column;
   padding: 0 0.3rem 0 0;
   margin: 0;
-  li {
-    list-style: none;
-    font-weight: 600;
-    font-size: 1rem;
-  }
+}
+.description-list li {
+  list-style: none;
+  font-weight: 600;
+  font-size: 1rem;
 }
 .own-btn {
   width: 7rem;
