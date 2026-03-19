@@ -169,6 +169,41 @@ h6 {
 }
 /*BODY END */
 
+/* ------------------------ INVENTORY GRID ---------------- */
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 1rem 0;
+}
+#inv-display li {
+  list-style: none;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+#inv-display img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.namePrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.notice {
+  padding: 1rem;
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  border-radius: 6px;
+}
+/* ---------------------- INVENTORY GRID END -------------- */
+
 /*------------------------ MEDIA FOR LARGE SCREEN ------------------------*/
 @media screen and (min-width: 768px) {
   body {
