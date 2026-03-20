@@ -204,6 +204,30 @@ h6 {
 }
 /* ---------------------- INVENTORY GRID END -------------- */
 
+/*  ----------------------  DETAILS  ---------------*/
+
+.inv-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.inv-detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.inv-detail-content {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+/* ------------------------END DETAILS ------------------- */
+
 /*------------------------ MEDIA FOR LARGE SCREEN ------------------------*/
 @media screen and (min-width: 768px) {
   body {
@@ -233,5 +257,11 @@ h6 {
     left: 5rem;
     padding: 1rem;
   }
+
+  .inv-detail {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
 }
 /*------------------------ MEDIA FOR LARGE SCREEN ------------------------*/
