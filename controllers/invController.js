@@ -19,4 +19,26 @@ invCont.buildByClassificationId = async function (req, res, next) {
   });
 };
 
+invCont.buildByInventoryId = async function(req,res,next){
+  const inv_id = req.params.invId;
+  const data = await invModel.getInventoryByInvId(inv_id);
+
+  if(!data){
+    return next({status:404, message:"Vehicle not found"});
+  }
+
+  const nav = await utilities.getNav();
+  const detail = await utilities.buildInventoryDetail(data);
+
+  res.render("./inventory/detail", {
+    title: `${data.inv_make} ${data.inv_model}`,
+    nav,
+    detail,
+  });
+};
+
+invCont.triggerError = async function (req, res, next) {
+  throw new Error("Intentional 500 error for testing");
+};
+
 module.exports = invCont;
