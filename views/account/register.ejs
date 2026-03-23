@@ -1,5 +1,13 @@
 <h1><%= title %></h1>
 
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
 <% if (typeof messages === "function") { %>
   <%- messages() %>
 <% } %>
@@ -13,6 +21,7 @@
     required
     autocomplete="given-name"
     placeholder="First name"
+    value="<%= locals.account_firstname %>"
   />
 
   <label for="account_lastname">Last Name</label>
@@ -23,6 +32,7 @@
     required
     autocomplete="family-name"
     placeholder="Last name"
+    value="<%= locals.account_lastname %>"
   />
 
   <label for="account_email">Email Address</label>
@@ -33,6 +43,7 @@
     required
     autocomplete="email"
     placeholder="you@example.com"
+    value="<%= locals.account_email %>"
   />
 
   <label for="account_password">Password</label>
