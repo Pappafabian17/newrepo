@@ -234,4 +234,65 @@ h6 {
     padding: 1rem;
   }
 }
+.account-form {
+  max-width: 520px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.account-form label {
+  font-weight: 600;
+  color: #212a5a;
+}
+.account-form input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.account-form input:required:invalid {
+  border: 2px solid #d32f2f;
+  background-color: #fff7f7;
+}
+.account-form input:required:valid {
+  border: 2px solid #2e7d32;
+  background-color: #f7fff8;
+}
+.form-hint {
+  margin: -0.3rem 0 0.3rem;
+  font-size: 0.9rem;
+  color: #455a64;
+}
+.account-form button {
+  padding: 0.75rem;
+  background: #212a5a;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.account-form button:hover {
+  background: #1a2147;
+}
+.flash-message {
+  max-width: 520px;
+  margin: 0.8rem auto;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+.account-helper-link {
+  max-width: 520px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
 /*------------------------ MEDIA FOR LARGE SCREEN ------------------------*/
