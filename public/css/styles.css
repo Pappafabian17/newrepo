@@ -229,6 +229,63 @@ h6 {
 /* ------------------------END DETAILS ------------------- */
 
 /*------------------------ MEDIA FOR LARGE SCREEN ------------------------*/
+
+/* Inventory and  Classification Forms */
+#addClassificationForm,
+#addInventoryForm {
+  max-width: 560px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+}
+#addClassificationForm label,
+#addInventoryForm label {
+  font-weight: 600;
+  color: #212a5a;
+}
+#addClassificationForm input[type="text"],
+#addInventoryForm input[type="text"],
+#addInventoryForm input[type="number"],
+#addInventoryForm textarea,
+#addInventoryForm select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+#addInventoryForm textarea { min-height: 100px; }
+#addClassificationForm input[type="submit"],
+#addInventoryForm input[type="submit"] {
+  padding: 0.75rem;
+  background: #212a5a;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#addClassificationForm input[type="submit"]:hover,
+#addInventoryForm input[type="submit"]:hover {
+  background: #1a2147;
+}
+#addInventoryForm input:required:invalid,
+#addClassificationForm input:required:invalid,
+#addInventoryForm textarea:required:invalid {
+  border: 2px solid #d32f2f;
+  background-color: #fff7f7;
+}
+#addInventoryForm input:required:valid,
+#addClassificationForm input:required:valid,
+#addInventoryForm textarea:required:valid {
+  border: 2px solid #2e7d32;
+  background-color: #f7fff8;
+}
 @media screen and (min-width: 768px) {
   body {
     display: flex;
