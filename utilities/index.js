@@ -160,6 +160,23 @@ Util.checkLogin = (req, res, next) => {
  }
 }
 
+Util.checkAccountType = async (req, res, next) => {
+ if (
+  res.locals.accountData &&
+  (res.locals.accountData.account_type === "Employee" ||
+   res.locals.accountData.account_type === "Admin")
+ ) {
+  return next()
+ }
+ req.flash("notice", "Please log in with an Employee or Admin account.")
+ let nav = await Util.getNav()
+ return res.status(403).render("account/login", {
+  title: "Login",
+  nav,
+  errors: null,
+ })
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for

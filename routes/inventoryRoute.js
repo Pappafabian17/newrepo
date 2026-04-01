@@ -6,17 +6,23 @@ const utilities = require("../utilities/");
 const invValidate = require("../utilities/inventory-validation");
 
 // Route to build inventory management view
-router.get("/", utilities.handleErrors(invController.buildManagementView));
+router.get(
+  "/",
+  utilities.checkAccountType,
+  utilities.handleErrors(invController.buildManagementView),
+);
 
 // Route to build add classification view
 router.get(
   "/add-classification",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.buildAddClassificationView),
 );
 
 // Route to process add classification form
 router.post(
   "/add-classification",
+  utilities.checkAccountType,
   invValidate.classificationRules(),
   invValidate.checkClassificationData,
   utilities.handleErrors(invController.addClassification),
@@ -25,12 +31,14 @@ router.post(
 // Route to build add inventory view
 router.get(
   "/add-inventory",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.buildAddInventoryView),
 );
 
 // Route to process add inventory form
 router.post(
   "/add-inventory",
+  utilities.checkAccountType,
   invValidate.inventoryRules(),
   invValidate.checkInventoryData,
   utilities.handleErrors(invController.addInventory),
@@ -39,12 +47,14 @@ router.post(
 // Route to build edit inventory view
 router.get(
   "/edit/:inv_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.editInventoryView),
 );
 
 // Route to update inventory data
 router.post(
   "/update/",
+  utilities.checkAccountType,
   invValidate.inventoryRules(),
   invValidate.checkUpdateData,
   utilities.handleErrors(invController.updateInventory),
@@ -53,12 +63,14 @@ router.post(
 // Route to build delete confirmation view
 router.get(
   "/delete/:inv_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.buildDeleteConfirmation),
 );
 
 // Route to delete inventory item
 router.post(
   "/delete/",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.deleteInventoryItem),
 );
 
@@ -69,6 +81,7 @@ router.get(
 );
 router.get(
   "/getInventory/:classification_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.getInventoryJSON),
 );
 router.get(
