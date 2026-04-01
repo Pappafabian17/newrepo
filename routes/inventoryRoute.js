@@ -30,8 +30,20 @@ router.post(
   utilities.handleErrors(invController.addInventory)
 );
 
+// Route to build edit inventory view
+router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryView));
+
+// Route to update inventory data
+router.post(
+  "/update/",
+  invValidate.inventoryRules(),
+  invValidate.checkUpdateData,
+  utilities.handleErrors(invController.updateInventory)
+);
+
 // Route to build inventory by classification view
 router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON));
 router.get("/detail/:invId", utilities.handleErrors(invController.buildByInventoryId));
 router.get("/trigger-error", utilities.handleErrors(invController.triggerError));
 
